@@ -34,20 +34,12 @@ public class LevelGenerator : MonoBehaviour {
             SpawnBlock();
         }
     }
-    int waitframes = 100;
-    int waitedFrames = 0;
     
     void Update() {
-        if(waitedFrames < waitframes) {
-            waitedFrames++;
-            return;
-        }
-
         for(int i = 0; i < activeBlocks.Count; i++) {
             activeBlocks[i].transform.position -= new Vector3(gameParams.RunSpeed * Time.deltaTime, 0, 0);
         }
-
-
+        
         var firstBlock = activeBlocks[0];
 
         if(!GeometryUtility.TestPlanesAABB(mainCamFrustrumPlanes, firstBlock.GetComponent<SpriteRenderer>().bounds)) {
@@ -56,8 +48,6 @@ public class LevelGenerator : MonoBehaviour {
             blockPool.Add(firstBlock);
             SpawnBlock();
         }
-        
-        //Debug.Log("Blockpool count: " + blockPool.Count);
     }
 
     void SpawnBlock() {
