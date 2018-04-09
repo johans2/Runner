@@ -6,5 +6,5 @@ using UnityEngine;
 public class GameParams : ScriptableObject {
 
     public float RunSpeed = 10;
-
+    public float Gravity = -20;
 }

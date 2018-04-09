@@ -231,34 +231,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114381152536090154, guid: 8a92aaf3b2e48d54d81f71eca3d0bd4f,
-        type: 2}
-      propertyPath: gameParams
-      value: 
-      objectReference: {fileID: 11400000, guid: b62a010bc493710489219d9f786f865d,
-        type: 2}
-    - target: {fileID: 114381152536090154, guid: 8a92aaf3b2e48d54d81f71eca3d0bd4f,
-        type: 2}
-      propertyPath: blockPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 1985053074613626, guid: c57a649340b05774d9714313a6965d12,
-        type: 2}
-    - target: {fileID: 114381152536090154, guid: 8a92aaf3b2e48d54d81f71eca3d0bd4f,
-        type: 2}
-      propertyPath: blockPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 1737360975998752, guid: 9cdc857f6c2d0b944bff77f44a2a73ea,
-        type: 2}
-    - target: {fileID: 114381152536090154, guid: 8a92aaf3b2e48d54d81f71eca3d0bd4f,
-        type: 2}
-      propertyPath: blockPrefabs.Array.data[4]
-      value: 
-      objectReference: {fileID: 1985053074613626, guid: c57a649340b05774d9714313a6965d12,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a92aaf3b2e48d54d81f71eca3d0bd4f, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &1510421469
+--- !u!1001 &1882709130
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -295,11 +271,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4977817642366188, guid: be9d990075951a64ea5321c0ec200289, type: 2}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212226221234281730, guid: be9d990075951a64ea5321c0ec200289,
-        type: 2}
-      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28a5f3698de4a7140be4cf1ef68e9709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameParams: {fileID: 0}
+  gameParams: {fileID: 11400000, guid: b62a010bc493710489219d9f786f865d, type: 2}
   blockPrefabs:
   - {fileID: 1627721892231970, guid: 57c1ac7b8435aed4e9700a68213dbcc3, type: 2}
   - {fileID: 1627721892231970, guid: 57c1ac7b8435aed4e9700a68213dbcc3, type: 2}
