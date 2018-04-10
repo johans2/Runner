@@ -6,5 +6,6 @@ using UnityEngine;
 public class GameParams : ScriptableObject {
 
     public float RunSpeed = 10;
-    public float Gravity = -20;
+
+    public Vector2 jumpForce = new Vector2(0f, 1f);
 }
