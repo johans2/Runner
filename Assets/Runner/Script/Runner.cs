@@ -2,8 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CakewalkIoC.Signal;
 
 public class Runner : MonoBehaviour {
+
+    public static Signal Dead = new Signal();
 
     public GameParams gameParams;
 
@@ -45,6 +48,15 @@ public class Runner : MonoBehaviour {
 
     private void Roll() {
 
+    }
+
+    private void Die() {
+        Dead.Dispatch();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Obstacle")) Die();
     }
 
     private void Jump() {

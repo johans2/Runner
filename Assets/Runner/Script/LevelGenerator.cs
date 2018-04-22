@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,12 +14,21 @@ public class LevelGenerator : MonoBehaviour {
 
     private const int numStartBlocks = 3;
     private Plane[] mainCamFrustrumPlanes;
+    private bool runnerAlive;
 
     void Start() {
         mainCamFrustrumPlanes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
+        runnerAlive = true;
+
+        Runner.Dead.AddListener(OnRunnerDead);
 
         InitializeBlocks();
         SpawnStartBlocks();
+    }
+
+    void OnRunnerDead()
+    {
+        runnerAlive = false;
     }
 
     void InitializeBlocks() {
@@ -36,13 +46,20 @@ public class LevelGenerator : MonoBehaviour {
     }
     
     void Update() {
-        for(int i = 0; i < activeBlocks.Count; i++) {
+        if (!runnerAlive) return;
+        MoveBlocks();
+    }
+
+    void MoveBlocks() {
+        for (int i = 0; i < activeBlocks.Count; i++)
+        {
             activeBlocks[i].transform.position -= new Vector3(gameParams.RunSpeed * Time.deltaTime, 0, 0);
         }
-        
+
         var firstBlock = activeBlocks[0];
 
-        if(!GeometryUtility.TestPlanesAABB(mainCamFrustrumPlanes, firstBlock.GetComponent<SpriteRenderer>().bounds)) {
+        if (!GeometryUtility.TestPlanesAABB(mainCamFrustrumPlanes, firstBlock.GetComponent<SpriteRenderer>().bounds))
+        {
             firstBlock.SetActive(false);
             activeBlocks.Remove(firstBlock);
             blockPool.Add(firstBlock);
@@ -66,10 +83,12 @@ public class LevelGenerator : MonoBehaviour {
     }
     
     GameObject GetRandomPooledBlock() {
-        var block = blockPool[Random.Range(0, blockPool.Count)];
+        var block = blockPool[UnityEngine.Random.Range(0, blockPool.Count)];
         blockPool.Remove(block);
         return block;
     }
 
-
+    void OnDestroy() {
+        Runner.Dead.RemoveListener(OnRunnerDead);
+    }
 }

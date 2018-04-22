@@ -313,17 +313,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114854215199993754, guid: be9d990075951a64ea5321c0ec200289,
-        type: 2}
-      propertyPath: gameParams
-      value: 
-      objectReference: {fileID: 11400000, guid: b62a010bc493710489219d9f786f865d,
-        type: 2}
-    - target: {fileID: 50337385730183570, guid: be9d990075951a64ea5321c0ec200289,
-        type: 2}
-      propertyPath: m_GravityScale
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be9d990075951a64ea5321c0ec200289, type: 2}
   m_IsPrefabParent: 0
